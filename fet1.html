@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Rubik|Nunito&display=swap');
+
+        body{
+    font-family:"Rubik",monospace;
+            }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_1.gif) center no-repeat white;
+}
+        </style>
+        <title>Live data</title>
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </head>
+    <body  style="background-color: rgb(207, 202, 202);">
+        <div class="se-pre-con"></div>
+        <br>
+        <div style="font-size: 50px; text-shadow: 2px 2px darkolivegreen;">COVID Live Data</div>
+        <br>
+        <br>
+        <div class="container">
+            <div class="jumbotron">
+            <div class="relative"><img src="https://img.icons8.com/color/1600/coronavirus.png" style="float:right; width: 100px; height: 100px;"  ></div>
+
+            <div style="font-size: 5rem;">INDIA</div>
+            <hr>
+            <div style="margin-left:50% ;">
+           <div class="btn btn-info" style="background-color:rgb(230, 190, 82);color:black;"><div>
+            <i class="far fa-frown"></i>   
+            Total cases
+           <div id="a"> </div>
+            </div></div><br><br>
+            <div class="btn btn-info" style="background-color:rgb(99, 233, 117);color:black;"><div> 
+                <i class="far fa-sad-tear"></i>
+                Total deaths
+                <div id="b"></div>
+            </div>
+            </div><br><br>
+            <div class="btn btn-info" style="background-color:rgb(224, 148, 98); color:black;"><div>
+                <i class="far fa-smile"></i>
+                Total recovered
+                <div id="c"></div>
+            </div>
+            </div>
+            </div>
+            
+            <div style="font-size: 3rem;">State Wise Reports</div>  
+            <label style="font-size: 2rem;">
+              Choose State:
+              <select id="select" class="form-control">
+<option>Andaman and Nicobar Islands</option>
+<option>Andhra Pradesh</option>
+<option>Arunachal Pradesh</option>
+<option>Assam</option>
+<option>Bihar</option>
+<option>Chandigarh</option>
+<option>Chhattisgarh</option>
+<option>Delhi</option>
+<option>Goa</option>
+<option>Gujarat</option>
+<option>Haryana</option>
+<option>Himachal Pradesh</option>
+<option>Jammu and Kashmir</option>
+<option>Jharkhand</option>
+<option>Karnataka</option>
+<option>Kerala</option>
+<option>Ladakh</option>
+<option>Madhya Pradesh</option>
+<option>Maharashtra</option>
+<option>Manipur</option>
+<option>Meghalaya</option>
+<option>Mizoram</option>
+<option>Odisha</option>
+<option>Puducherry</option>
+<option>Punjab</option>
+<option>Rajasthan</option>
+<option>Tamil Nadu</option>
+<option>Telengana</option>
+<option>Tripura</option>
+<option>Uttarakhand</option>
+<option>Uttar Pradesh</option>
+<option>West Bengal</option>
+              </select>
+            </label>
+            <div id="s" style="font-size: 2rem;"></div>
+            <br>
+                <div>
+            <div class="btn btn-info" style="background-color:rgb(230, 190, 82);color:black;"><div>
+                <i class="far fa-frown"></i>  
+            Total cases
+            <div id="s1"></div>
+            </div>
+                </div>
+            <div class="btn btn-info" style="background-color:rgb(99, 233, 117);color:black;"><div> 
+            <i class="far fa-sad-tear"></i>
+             Total deaths
+                <div id="s2"> </div>
+            </div>
+            </div>
+            <div class="btn btn-info" style="background-color:rgb(224, 148, 98);color:black;"><div>
+                <i class="far fa-smile"></i>
+             Total recovered
+             <div id="s3"></div>
+            </div>
+            </div>
+            
+        </div>
+    </div>
+        <div class="container">
+            <div class="jumbotron">
+                <div class="realative">
+            <img src="https://cdn2.iconfinder.com/data/icons/coronavirus-how-to-protect-yourself-1/512/MaskFemale007-512.png" style="height:200px; width: 200px;">
+            <p style="font-size:50px; text-shadow: 2px 2px cyan;">#StaySafe      #StayHome</p>
+            <p style="float: right;"><i><b>>>Mukul varshney</b></i><hr></p>
+            </div>
+            </div>
+        </div> 
+        <script>
+            var selectElem = document.getElementById("select");
+            $.ajax({
+  url: 'https://api.rootnet.in/covid19-in/stats/latest',
+  dataType: 'json',
+  success: function(res) {
+            selectElem.addEventListener('change', function() {
+        var i = selectElem.selectedIndex;
+        $("#s").text(res.data.regional[i].loc);
+        $("#s1").text(res.data.regional[i].totalConfirmed);
+        $("#s2").text(res.data.regional[i].deaths);
+        $("#s3").text(res.data.regional[i].discharged);
+});
+}
+});
+        </script>
+        <script>
+$.ajax({
+  url: 'https://api.thevirustracker.com/free-api?countryTotal=IN',
+  dataType: 'json',
+  success: function(data) {
+    $(document).ready(function(){
+   $("#a").text(data.countrydata[0].total_cases)
+   $("#b").text(data.countrydata[0].total_deaths)
+   $("#c").text(data.countrydata[0].total_recovered)
+});
+  }
+});
+
+$.ajax({
+  url: 'https://api.rootnet.in/covid19-in/stats/latest',
+  dataType: 'json',
+  success: function(res) {
+    $(document).ready(function(){
+        $("#s").text(res.data.regional[0].loc);
+        $("#s1").text(res.data.regional[0].totalConfirmed);
+        $("#s2").text(res.data.regional[0].deaths);
+        $("#s3").text(res.data.regional[0].discharged);
+    });
+}
+});
+        </script>
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+         <script>
+
+            $(window).load(function() {
+              $(".se-pre-con").fadeOut("slow");;
+            });
+            </script>
+    </body>
+</html>

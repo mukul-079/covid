@@ -3,15 +3,6 @@
 <html>
     <head>
         <title>COVID - Fight Against Corona</title>
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.13.2/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/7.13.2/firebase-analytics.js"></script>
-
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
         <link rel="shortcut icon" href="favicon.png">
              <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
              <script src="https://kit.fontawesome.com/a076d05399.js"></script>
@@ -24,6 +15,17 @@
     padding-left: 0;
     box-sizing: border-box;
     font-family: 'Rubik', sans-serif;
+
+}
+
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(https://smallenvelop.com/wp-content/uploads/2014/08/Preloader_1.gif) center no-repeat white;
 }
 .bottom {
     padding-right: 2rem;
@@ -48,6 +50,10 @@ button {
     transition: all .3s ease 0s;
     font-family: "Baloo Da 2",sans-serif;
 }
+.bottom {
+    padding-right: 2rem;
+    float: right;
+}
 
 .button{
     margin-left: 30px;
@@ -68,7 +74,6 @@ button {
 
 body{
     justify-content: center;
-    aling-self: center;
     min-height: 100vh;
     background: #222;
 }
@@ -145,23 +150,27 @@ body{
        </style>
     </head>
     <body>
+      <div class="se-pre-con"></div>
       <div>
         <table border="0" width="100%" height="60px" bgcolor="black">
           <tr>
-            <td width="40%">
-      <button type="button" class="button"><a href="https://forms.gle/RUwdLpHap7q5Ch9R8" target="0">Get your pass</a></button>
+            <td width="30%">
+      <button type="button" class="button"><a href="file:///C:/Users/madhav%20computers/Desktop/virus/pass.html" target="0">Get your pass</a></button>
     </td>
-      <td width="15%">
+      <td width="14%">
       <a href="#co"><p>What is Corona</p></a>
     </td>
-      <td width="15%">
+      <td width="14%">
         <a href="#what"><p >Advisory</p></a>
     </td>
-      <td width="15%">
-      <a href="https://www.worldometers.info/coronavirus/#countries" target="0"><p>Live data</p></a>
+      <td width="14%">
+      <a href="file:///C:/Users/madhav%20computers/Desktop/virus/fet1.html" target="0"><p>Live data</p></a>
     </td>
-      <td width="15%">
-      <a href="https://www.pmindia.gov.in/en/?query#" target="1"><p>Donation</p></a>
+      <td width="14%">
+      <a href="#don"><p>Donation</p></a>
+    </td>
+    <td width="14%">
+      <a href="file:///C:/Users/madhav%20computers/Desktop/virus/a.html"target="0"><p><i class="fas fa-comment-alt"></i> Info</p></a>
     </td>
   </tr>
   </table>
@@ -169,12 +178,12 @@ body{
     <table  class="s" border="0" width="100%" height="550px">
       <tr>
         <td>
-<p style="font-size: 150px; color:cyan;"><i class="fas fa-viruses"></i>COVID</p>
+<p style="font-size: 150px; color:cyan; text-shadow: 4px 4px black;"><i class="fas fa-viruses"></i>COVID-19</p>
 </td>
 </tr>
 </table>
 
-<center><p style="font-size: 50px;color: blue;" id="co">What is corona virus?</p></center>
+<center><p style="font-size: 50px;color:orange;" id="co">What is corona virus?</p></center>
         <table border="0" width="100%">
           <tr>
             <td width="75%">
@@ -190,7 +199,7 @@ body{
 </tr>
 </table>
 <br>
-<center><p id="what" style="font-size: 50px;color: blue;">What You Can do?</p> </center>
+<center><p id="what" style="font-size: 50px;color: orange;">What You Can do?</p> </center>
         <div class="container" >
              <div class="box">
                   <div class="content">
@@ -230,13 +239,26 @@ body{
             </div>
         </div>
         <div  id="pass" class="str">
-          <p style="font-size: 50px; color:blue;">E-Pass:</p>
-          <button type="button" class="button"><a href="https://forms.gle/RUwdLpHap7q5Ch9R8" target="0">Get your pass</a></button>
+          <p style="font-size: 50px; color:greenyellow;">E-Pass:</p>
+          <button type="button" class="button"><a href="file:///C:/Users/madhav%20computers/Desktop/virus/pass.html" target="0">Get your pass</a></button>
           <br>
           <p style="font-size: 40px;color:yellow;"><i>Important Note :</i></p>
           <p style="font-size: 30px;color:orange;">Due to current situation in the country, your co-operation is a must</p>
           <p style="font-size: 30px;color:orange;">Be a responsible citizen and only go out when it is very urgent.</p>
           <p style="font-size: 30px;color:orange;">Only one pass per citizen will be issued in one week.</p>
+
+        </div>
+         <div  id="don" class="str">
+          <center><p style="font-size: 50px; color:white;"><b>PM</b>CARES</p>
+          <br>
+          <p style="font-size: 20px;color:grey;">Account name:   PM CARES</p>
+          <p style="font-size: 20px;color:grey;">Account number: 2121PM20202</p>
+          <p style="font-size: 20px;color:grey;">IFSC Code:      SBIN0000691</p>
+          <p style="font-size: 20px;color:gray;">Bank:           State Bank of India , New Delhi</p>
+          <br>
+          <button type="button" class="button"><a href="https://www.pmcares.gov.in/en/web/contribution/donate_india" target="0">Donate </a></button>
+          <br>
+        </center>
 
         </div>
         <div>
@@ -245,20 +267,27 @@ body{
           <p style="font-size: 50px;color: #e91e63;"><i class="fas fa-phone-alt"></i> Toll free No:<a href="tel:1075"style="font-size: 50px;color: cyan;">1075</a></p>
         </div>
         <br>
-        <br>
-        <table border="0" width="100%" height="150px" bgcolor="#232F3E">
+        <br><hr>
+        <table border="0" width="100%" height="150px" bgcolor="black">
           <tr>
             <td>
   <p style="color:cyan">This website is give the information about corona virus (covid-19)</p>
 </td>
 </tr>
+<tr class="bottom" style="color:cyan">
+  <td><b><i>>> Mukul Varshney</i></b>
+    </td>
+  </tr>
 <tr>
   <td>
     <center><button type="button" class="button"><a href="FAQ.pdf" target="0">FAQ</a></button></center>
   </td>
 </tr>
-<tr class="bottom" style="color:cyan">
-  <td>Developed by Mukul Varshney
+<tr class="bottom" style="color:cyan;font-size: 20px; ">
+  <td>Follow us:
+    <a href="https://www.instagram.com/mukul_079">  <i class="fab fa-instagram" style="font-size: 20px; "> </i></a>
+    <a href="https://www.facebook.com/mukul.varshney.3597">  <i class="fab fa-facebook"style="font-size: 20px; "></i></a>
+
     </td>
   </tr>
   <tr style="color:cyan">
@@ -266,5 +295,14 @@ body{
     </td>
   </tr>
     </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <script>
+
+      $(window).load(function() {
+        $(".se-pre-con").fadeOut("slow");;
+      });
+      </script>
+
     </body>
 </html>

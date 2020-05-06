@@ -1,0 +1,122 @@
+<!--MUKUL-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COVID - Fight Against Corona</title>
+         <link rel="shortcut icon" href="favicon.png">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+             <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+             <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+             <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+ <style>
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+body {
+  background:black;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  height: 100vh;
+}
+
+#result {
+  font-size: 36px;
+  color: #fff;
+}
+
+#ans {
+  color: #fff;
+  padding: 20px;
+  font-size: 26px;
+  background: transparent;
+  border: 0; 
+}
+
+#ans:focus {
+  outline: 0;
+  outline-offset: 0;
+}        </style>
+    </head>
+    <body>
+ <div class="flex">
+ 	<p style="font-size: 40px;color: cyan;"><i class="fas fa-comment-alt"></i> Covid Info</p>
+  <div>
+  </div>
+  <div id="result">
+  </div>
+  <div class="input">
+  <input type="text" id="ans" placeholder="Enter your Detail" required/>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous"></script>
+<script>
+	var questions = [
+    'What is your name',
+    'please enter your age.',
+    'Have you traveled anywhere internationally in the last 14 days?',
+    'are you experiencing any fever symptoms',
+    'OK,It was nice talking you :)'
+];
+var num = 0;
+
+var inputBox = document.querySelector("#ans");
+var output = document.querySelector("#result");
+output.innerHTML = questions[num];
+
+function showResponse() {
+  var input = inputBox.value;
+  if(inputBox.value == "") {
+    
+  }else {
+  if(num == 0) {
+    output.innerHTML = `Hii ${input}`;
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "Wait for a secs");
+    ++num;
+    setTimeout(changeQuestion, 2000);
+  } else if(num == 1) {
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "Wait for a secs");
+    ++num;
+    setTimeout(changeQuestion, 2000);
+  } else if(num == 2) {
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "Wait for a secs");
+    ++num;
+    setTimeout(changeQuestion, 2000);
+  } else if(num == 3) {
+    inputBox.value = "";
+    inputBox.setAttribute("placeholder", "Wait for a secs");
+    ++num;
+    setTimeout(changeQuestion, 2000);
+  }
+  }
+}
+
+function changeQuestion() {
+  inputBox.setAttribute("placeholder", "Enter your Detail");
+  output.innerHTML = questions[num];
+  if(num == 4) {
+    inputBox.style.display = "none";
+  }
+}
+
+$(document).on('keypress', function(e) {
+  if(e.which == 13) {
+    showResponse();
+  }
+})
+
+$( "#ans" ).focus();
+</script>
+</body>
+</html>
